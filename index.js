@@ -9,7 +9,6 @@ const app             = express();
 
 mongoose.connect(env.db);
 
-
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
 
