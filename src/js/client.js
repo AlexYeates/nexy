@@ -11,7 +11,13 @@ function newsApi() {
     console.log(data);
     var articleArray = data.articles;
     articleArray.forEach(function(element) {
-      console.log(element);
+      console.log(element.author);
+      console.log(element.description);
+      console.log(element.publishedAt);
+      console.log(element.title);
+      console.log(element.url);
+      console.log(element.urlToImage);
+
     });
   });
 }
