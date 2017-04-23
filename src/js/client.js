@@ -11,14 +11,13 @@ function newsApi() {
     console.log(data);
     var articleArray = data.articles;
     articleArray.forEach(function(element) {
-      console.log(element.author);
-      console.log(element.description);
-      console.log(element.publishedAt);
       console.log(element.title);
+      console.log(element.description);
+      console.log(element.author);
+      console.log(element.publishedAt);
       console.log(element.url);
       console.log(element.urlToImage);
-      // article = { author: element.author, description: element.description, publishedAt: element.publishedAt, title: element.title, url: element.url, image: element.urlToImage };
-      $(`<div><h2>${element.title}</h2><p>${element.description}</p></div>`).appendTo('#news');
+      $(`<div><img src="${element.urlToImage}"><h2>${element.title}</h2><p>${element.description}</p><p><a href="${element.url}">Read more...</a></p></div>`).appendTo('#news');
     });
   });
 }
