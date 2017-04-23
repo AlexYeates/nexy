@@ -17,7 +17,8 @@ function newsApi() {
       console.log(element.title);
       console.log(element.url);
       console.log(element.urlToImage);
-
+      // article = { author: element.author, description: element.description, publishedAt: element.publishedAt, title: element.title, url: element.url, image: element.urlToImage };
+      $(`<div><h2>${element.title}</h2><p>${element.description}</p></div>`).appendTo('#news');
     });
   });
 }
