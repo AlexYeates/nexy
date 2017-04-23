@@ -8,7 +8,7 @@ const methodOverride  = require('method-override');
 const env             = require('./config/env');
 const router          = require('./config/routes');
 const app             = express();
-const session         = require('/express-session');
+const session         = require('express-session');
 const User            = require('./models/user');
 const flash           = require('express-flash');
 
