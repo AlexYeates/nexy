@@ -1,7 +1,7 @@
 const express                = require('express');
 const router                 = express.Router();
 const highlightController    = require('../controllers/highlight');
-const registrationController = require('../controllers/registerations');
+const registrationController = require('../controllers/registrations');
 const sessionsController     = require('../controllers/sessions');
 
 function secureRoute(req, res, next) {
