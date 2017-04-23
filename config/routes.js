@@ -14,7 +14,7 @@ function secureRoute(req, res, next) {
   next();
 }
 
-router.get('/', (req, res) => res.render('statics/landing'));
+router.get('/', (req, res) => res.render('statics/home'));
 
 router.route('/highlight')
 .get(highlightController.index)
