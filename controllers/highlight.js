@@ -22,7 +22,7 @@ function highlightShow(req, res) {
   .exec()
   .then(highlight => {
     if (!highlight) return res.status(404).render('error', { error: 'No highlight found.' });
-    res.render('higlight/show', { highlight });
+    res.render('highlight/show', { highlight });
   })
   .catch(err => {
     res.status(500).render('error', { error: err });
@@ -43,7 +43,7 @@ function highlightEdit(req, res) {
   .exec()
   .then(highlight => {
     if (!highlight) return res.status(404).render('error', { error: 'No highlight found.' });
-    res.render('higlight/edit', { highlight });
+    res.render('highlight/edit', { highlight });
   })
   .catch(err => {
     res.status(500).render('error', { error: err });
