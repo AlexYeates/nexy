@@ -18,7 +18,14 @@ function newsApi(source) {
   .done(data => {
     var articleArray = data.articles;
     articleArray.forEach(function(element) {
-      $(`<div class="grid-item"><img src="${element.urlToImage}"><h2>${element.title}</h2><p>${element.description}</p><p><a href="${element.url}">Read more...</a></p></div>`).appendTo('#news');
+      $(`<div class="grid-item">
+        <img src="${element.urlToImage}">
+        <h2>${element.title}</h2>
+        <p>${element.description}</p>
+        <p><a href="${element.url}">Read more...</a></p>
+        <a class="btn btn-primary" href="/highlight/new">Highlight</a>
+      </div>`)
+      .appendTo('#news');
     });
   });
 }
