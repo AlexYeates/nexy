@@ -1,6 +1,6 @@
 $(init);
 
-const newsSources = ['bbc-news', 'sky-news'];
+const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news'];
 
 function init() {
   newsApi();
