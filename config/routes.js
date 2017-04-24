@@ -17,16 +17,14 @@ function secureRoute(req, res, next) {
 router.get('/', (req, res) => res.render('statics/home'));
 
 router.route('/highlight')
-.get(highlightController.index)
-.post(secureRoute, highlightController.create);
-router.route('highlight/new')
-.get(secureRoute, highlightController.new);
+  .get(highlightController.index)
+  .post(secureRoute, highlightController.create);
 router.route('/highlight/:id')
-.get(highlightController.show)
-.put(secureRoute, highlightController.update)
-.delete(secureRoute, highlightController.delete);
+  .get(highlightController.show)
+  .put(secureRoute, highlightController.update)
+  .delete(secureRoute, highlightController.delete);
 router.route('/highlight/:id/edit')
-.get(secureRoute, highlightController.edit);
+  .get(secureRoute, highlightController.edit);
 
 router.route('/register')
 .get(registrationController.new)

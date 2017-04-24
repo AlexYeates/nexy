@@ -55,7 +55,7 @@ app.use((req, res, next) => {
     res.locals.isLoggedIn = true;
 
     console.log(user);
-
+    
     next();
   });
 });

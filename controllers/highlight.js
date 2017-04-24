@@ -1,4 +1,5 @@
 const Highlight = require('../models/highlight');
+const User      = require('../models/user');
 
 function highlightIndex(req, res) {
   Highlight
@@ -10,10 +11,6 @@ function highlightIndex(req, res) {
     .catch(err => {
       res.status(500).render('error', { error: err });
     });
-}
-
-function highlightNew(req, res) {
-  res.render('highlight/new');
 }
 
 function highlightShow(req, res) {
@@ -32,8 +29,17 @@ function highlightShow(req, res) {
 function highlightCreate(req, res){
   Highlight
   .create(req.body)
-  .then(() => {
-    res.redirect('/highlight');
+  .then(highlight => {
+    User
+      .findById(res.locals.user._id)
+      .exec()
+      .then(user => {
+        if (!user.highlights.includes(highlight._id)) user.highlights.push(highlight._id);
+        user.save(err => {
+          if (err) console.log(err);
+          res.redirect('/');
+        });
+      });
   });
 }
 
@@ -88,7 +94,6 @@ function highlightDelete(req, res) {
 
 module.exports = {
   index: highlightIndex,
-  new: highlightNew,
   show: highlightShow,
   create: highlightCreate,
   edit: highlightEdit,

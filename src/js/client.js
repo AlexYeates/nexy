@@ -5,6 +5,17 @@ let newsId = 0;
 
 function init() {
   newsApi();
+  $('#news').on('click', 'div', function() {
+    console.log(this);
+    const data = {
+      title: $(this).find('h2').text(),
+      description: $(this).find('p').text(),
+      url: $(this).find('a').attr('href'),
+      image: $(this).find('img').attr('src')
+    };
+
+    $.post('http://localhost:8000/highlight', data);
+  });
 }
 
 // news api key: e791d42519134d8ca50ff49ea0b3d33a

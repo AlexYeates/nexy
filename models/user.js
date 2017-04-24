@@ -4,7 +4,15 @@ const bcrypt   = require('bcrypt');
 const userSchema = new mongoose.Schema({
   username: String,
   email: String,
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  highlights: [{ type: mongoose.Schema.ObjectId, ref: 'Highlight' }]
+});
+
+userSchema.pre('save', function hashPassword(next) {
+  if(this.isModified('password')) {
+    this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(10));
+  }
+  next();
 });
 
 userSchema
@@ -14,16 +22,7 @@ userSchema
 });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
-    this.invalidate('passwordConfirmation', 'does not match');
-  }
-  next();
-});
-
-userSchema.pre('save', function hashPassword(next) {
-  if(this.isModified('password')) {
-    this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(10));
-  }
+  if (this.isModified('password') && this._passwordConfirmation !== this.password) this.invalidate('passwordConfirmation', 'does not match');
   next();
 });
 
