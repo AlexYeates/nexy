@@ -1,6 +1,6 @@
 $(init);
 
-const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news', 'cnn', 'financial-times', 'mirror', 'the-economist', 'the-telegraph', 'reuters'];
+const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news', 'cnn', 'mirror', 'the-economist', 'the-telegraph', 'reuters'];
 
 function init() {
   newsApi();
@@ -18,7 +18,7 @@ function newsApi(source) {
   .done(data => {
     var articleArray = data.articles;
     articleArray.forEach(function(element) {
-      $(`<div><img src="${element.urlToImage}"><h2>${element.title}</h2><p>${element.description}</p><p><a href="${element.url}">Read more...</a></p></div>`).appendTo('#news');
+      $(`<div class="grid-item"><img src="${element.urlToImage}"><h2>${element.title}</h2><p>${element.description}</p><p><a href="${element.url}">Read more...</a></p></div>`).appendTo('#news');
     });
   });
 }
