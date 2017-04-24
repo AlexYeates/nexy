@@ -35,3 +35,7 @@ function newsApi(source) {
 // });
 // then have another api request here and repeat?
 // then at the end do a math.random to print to the screen?
+
+
+
+// note from nat
