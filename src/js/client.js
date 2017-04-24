@@ -5,7 +5,7 @@ let newsId = 0;
 
 function init() {
   newsApi();
-  $('#news').on('click', 'div', function() {
+  $('div').on('click', 'div', function() {
     console.log(this);
     const data = {
       title: $(this).find('h2').text(),
@@ -41,3 +41,6 @@ function newsApi(source) {
     });
   });
 }
+// line 38 could just be a button that is used to grab the div's information and post to the local server db
+
+// line 8's event listener will need to be changed to the button 
