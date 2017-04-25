@@ -41,6 +41,3 @@ function newsApi(source) {
     });
   });
 }
-// line 38 could just be a button that is used to grab the div's information and post to the local server db
-
-// line 8's event listener will need to be changed to the button 
