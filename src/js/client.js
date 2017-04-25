@@ -3,17 +3,7 @@ $(init);
 const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news', 'cnn', 'the-economist', 'the-telegraph', 'reuters'];
 
 function init() {
-  // $('.highlight').on('click', function() {
-  //   console.log(this);
-  //   const data = {
-  //     title: $('.highlight').parent().find('h2').text(),
-  //     description: $('.highlight').parent().find('p').text(),
-  //     url: $('.highlight').parent().find('a').attr('href'),
-  //     image: $('.highlight').parent().find('img').attr('src')
-  //   };
-  //   $.post('http://localhost:8000/highlight', data);
-  // });
-  $('div').on('click', 'div', function() {
+  $('div').on('click', '.highlight', function() {
     console.log(this);
     const data = {
       title: $(this).find('h2').text(),

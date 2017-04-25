@@ -21,7 +21,7 @@ router.route('/highlight')
   .post(secureRoute, highlightController.create);
 router.route('/highlight/:id')
   .delete(secureRoute, highlightController.delete);
-  
+
 router.route('/register')
 .get(registrationController.new)
 .post(registrationController.create);
