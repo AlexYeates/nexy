@@ -5,9 +5,9 @@ function userShow(req, res) {
   .findById(req.session.id)
   .populate()
   .exec()
-  .then(highlight => {
-    if (!highlight) return res.status(404).render('error', { error: 'No highlight found.' });
-    res.render('user/show', { highlight });
+  .then(user => {
+    if (!user) return res.status(404).render('error', { error: 'No user found.' });
+    res.render('user/show', { user });
   })
   .catch(err => {
     res.status(500).render('error', { error: err });

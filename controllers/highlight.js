@@ -1,12 +1,25 @@
 const Highlight = require('../models/highlight');
 const User      = require('../models/user');
 
+// function highlightIndex(req, res) {
+//   Highlight
+//     .find()
+//     .exec()
+//     .then(highlight => {
+//       res.render('highlight/index', { highlight });
+//     })
+//     .catch(err => {
+//       res.status(500).render('error', { error: err });
+//     });
+// }
+
 function highlightIndex(req, res) {
-  Highlight
-    .find()
+  User
+    .findById(res.locals.user._id)
+    .populate('highlights')
     .exec()
-    .then(highlight => {
-      res.render('highlight/index', { highlight });
+    .then(user => {
+      res.render('highlight/index', { user });
     })
     .catch(err => {
       res.status(500).render('error', { error: err });

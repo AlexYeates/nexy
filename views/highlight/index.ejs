@@ -1,12 +1,8 @@
 <h1>Your Highlights</h1>
 
-<div class="grid">
-  <% highlight.forEach(highlight => { %>
-    <div class="grid-item">
-      <img src="<%= highlight.image %>" alt="<%= highlight.title %>">
-      <h2><%= highlight.title %></h2>
-      <p><%= highlight.description %></p>
-      <p><a href="<%= highlight.url %>">Read more</a></p>
-    </div>
-  <% }); %>
-</div>
+<% user.highlights.forEach(highlight => { %>
+    <p><%= highlight.title %></p>
+    <img src="<%= highlight.image %>">
+    <p><%= highlight.description %></p>
+    <p><%= highlight.url %></p>
+<% }) %>
