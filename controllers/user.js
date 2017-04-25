@@ -17,6 +17,3 @@ function userShow(req, res) {
 module.exports = {
   show: userShow
 };
-
-// the userShow needs to have the logged in user's id and to find the correct user's array from the local server db
-// it will then need to render the correct page, which will be the views/user/show page

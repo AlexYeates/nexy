@@ -20,12 +20,8 @@ router.route('/highlight')
   .get(highlightController.index)
   .post(secureRoute, highlightController.create);
 router.route('/highlight/:id')
-  .get(highlightController.show)
-  .put(secureRoute, highlightController.update)
   .delete(secureRoute, highlightController.delete);
-router.route('/highlight/:id/edit')
-  .get(secureRoute, highlightController.edit);
-
+  
 router.route('/register')
 .get(registrationController.new)
 .post(registrationController.create);
