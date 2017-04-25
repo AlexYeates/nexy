@@ -1,6 +1,6 @@
 $(init);
 
-const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news', 'cnn', 'mirror', 'the-economist', 'the-telegraph', 'reuters'];
+const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news', 'cnn', 'the-economist', 'the-telegraph', 'reuters'];
 let newsId = 0;
 
 function init() {
@@ -13,7 +13,6 @@ function init() {
       url: $(this).find('a').attr('href'),
       image: $(this).find('img').attr('src')
     };
-
     $.post('http://localhost:8000/highlight', data);
   });
 }
@@ -31,13 +30,16 @@ function newsApi(source) {
     var articleArray = data.articles;
     articleArray.forEach(function(element) {
       $(`<div class="grid-item" id="${newsId++}">
-      <img src="${element.urlToImage}">
-      <h2>${element.title}</h2>
-      <p>${element.description}</p>
-      <p><a href="${element.url}">Read more...</a></p>
-      <a class="btn btn-primary edit" href="/highlight/<%= highlight.id %>">Highlight</a>
-      </div>`)
+          <div class="top" style="background-image: url(${element.urlToImage})">
+            <button type="button" class="btn btn-primary">Highlight</button>
+          </div>
+          <h2>${element.title}</h2>
+          <p>${element.description}</p>
+          <p><a href="${element.url}">Read more...</a></p>
+        </div>`)
       .appendTo('#news');
     });
   });
 }
+
+// $("p").css("background-color", "yellow");
