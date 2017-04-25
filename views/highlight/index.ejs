@@ -4,6 +4,10 @@
   <% user.highlights.forEach(highlight => { %>
     <div class="grid-item">
       <img src="<%= highlight.image %>">
+      <form action="/highlight/<%= highlight.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button class="btn btn-danger delete">Delete</button>
+      </form>
       <h2><%= highlight.title %></h2>
       <p><%= highlight.description %></p>
       <p><a href="<%= highlight.url %>">Read more...</a></p>

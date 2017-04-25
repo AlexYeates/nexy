@@ -5,13 +5,13 @@ let newsId = 0;
 
 function init() {
   newsApi();
-  $('div').on('click', 'div', function() {
+  $('button').on('click', 'button', function() {
     console.log(this);
     const data = {
-      title: $(this).find('h2').text(),
-      description: $(this).find('p').text(),
-      url: $(this).find('a').attr('href'),
-      image: $(this).find('img').attr('src')
+      title: $(this).parent().find('h2').text(),
+      description: $(this).parent().find('p').text(),
+      url: $(this).parent().find('a').attr('href'),
+      image: $(this).parent().find('img').attr('src')
     };
     $.post('http://localhost:8000/highlight', data);
   });
@@ -31,7 +31,7 @@ function newsApi(source) {
     articleArray.forEach(function(element) {
       $(`<div class="grid-item" id="${newsId++}">
           <img src="${element.urlToImage}">
-          <button type="button" class="btn btn-primary">Highlight</button>
+          <button class="btn btn-primary">Highlight</button>
           <h2>${element.title}</h2>
           <p>${element.description}</p>
           <p><a href="${element.url}">Read more...</a></p>
