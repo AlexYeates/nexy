@@ -3,15 +3,15 @@ const User      = require('../models/user');
 
 function highlightIndex(req, res) {
   User
-    .findById(res.locals.user._id)
-    .populate('highlights')
-    .exec()
-    .then(user => {
-      res.render('highlight/index', { user });
-    })
-    .catch(err => {
-      res.status(500).render('error', { error: err });
-    });
+  .findById(res.locals.user._id)
+  .populate('highlights')
+  .exec()
+  .then(user => {
+    res.render('highlight/index', { user });
+  })
+  .catch(err => {
+    res.status(500).render('error', { error: err });
+  });
 }
 
 function highlightCreate(req, res){
@@ -19,15 +19,15 @@ function highlightCreate(req, res){
   .create(req.body)
   .then(highlight => {
     User
-      .findById(res.locals.user._id)
-      .exec()
-      .then(user => {
-        if (!user.highlights.includes(highlight._id)) user.highlights.push(highlight._id);
-        user.save(err => {
-          if (err) console.log(err);
-          res.redirect('/');
-        });
+    .findById(res.locals.user._id)
+    .exec()
+    .then(user => {
+      if (!user.highlights.includes(highlight._id)) user.highlights.push(highlight._id);
+      user.save(err => {
+        if (err) console.log(err);
+        res.redirect('/');
       });
+    });
   });
 }
 
