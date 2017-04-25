@@ -1,15 +1,10 @@
-img {
-
-}
-
-.top {
-  height: 200px;
-
-}
-
 .grid-item {
   float: left;
   width: 25%;
   height: 400px;
   border: 1px solid black;
+  img {
+    height: 50%;
+    width: 100%;
+  }
 }

@@ -30,9 +30,8 @@ function newsApi(source) {
     var articleArray = data.articles;
     articleArray.forEach(function(element) {
       $(`<div class="grid-item" id="${newsId++}">
-          <div class="top" style="background-image: url(${element.urlToImage})">
-            <button type="button" class="btn btn-primary">Highlight</button>
-          </div>
+          <img src="${element.urlToImage}">
+          <button type="button" class="btn btn-primary">Highlight</button>
           <h2>${element.title}</h2>
           <p>${element.description}</p>
           <p><a href="${element.url}">Read more...</a></p>
@@ -41,5 +40,3 @@ function newsApi(source) {
     });
   });
 }
-
-// $("p").css("background-color", "yellow");
