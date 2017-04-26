@@ -32,7 +32,7 @@ app.use(methodOverride((req) => {
 app.use(session({
   secret: process.env.SESSION_SECRET || 'sssshhh',
   resave: false,
-  saveUninitialised: false
+  saveUninitialized: false
 }));
 
 app.use(flash());
@@ -54,8 +54,8 @@ app.use((req, res, next) => {
     res.locals.user = user;
     res.locals.isLoggedIn = true;
 
-    console.log(user);
-    
+    // console.log(user);
+
     next();
   });
 });

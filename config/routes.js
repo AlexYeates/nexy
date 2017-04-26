@@ -8,7 +8,7 @@ function secureRoute(req, res, next) {
   if (!req.session.userId) {
     return req.session.regenerate(() => {
       req.flash('danger', 'You have to be loggin in to do that...');
-      req.redirect('/login');
+      res.redirect('/login');
     });
   }
   next();
@@ -16,7 +16,7 @@ function secureRoute(req, res, next) {
 
 router.get('/', (req, res) => res.render('statics/home'));
 
-router.route('/highlight')
+router.route('/highlights')
   .get(highlightController.index)
   .post(secureRoute, highlightController.create);
 router.route('/highlight/:id')
