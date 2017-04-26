@@ -6,10 +6,10 @@ function init() {
   $('div').on('click', '.highlight', function() {
     console.log(this);
     const data = {
-      title: $(this).find('h2').text(),
-      description: $(this).find('p').text(),
-      url: $(this).find('a').attr('href'),
-      image: $(this).find('img').attr('src')
+      title: $(this).parent().find('h2').text(),
+      description: $(this).parent().find('p').text(),
+      url: $(this).parent().find('a').attr('href'),
+      image: $(this).parent().find('img').attr('src')
     };
     $.post('http://localhost:8000/highlight', data);
   });
@@ -31,7 +31,7 @@ function newsApi(source) {
       <p>${element.description}</p>
       <p><a href="${element.url}">Read more...</a></p>
       </div>`)
-      .appendTo('#news');
+      .appendTo('#container');
     });
   });
 }
