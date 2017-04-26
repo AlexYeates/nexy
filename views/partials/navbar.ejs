@@ -4,20 +4,31 @@
     <li>
       <a href="/">Home</a>
     </li>
+    <br >
     <% if(locals.isLoggedIn) { %>
+    <hr >
       <li>
         <a href="/highlights">My Highlights</a>
       </li>
+    <br >
+    <hr >
       <li>
         <a href="/logout">Logout</a>
       </li>
+    <br >
+    <hr >
     <% } else { %>
-        <li>
-          <a href="/login">Sign In</a>
-        </li>
-        <li>
-          <a href="/register">Sign Up</a>
-        </li>
+    <hr >
+      <li>
+        <a href="/login">Sign In</a>
+      </li>
+    <br >
+    <hr >
+      <li>
+        <a href="/register">Sign Up</a>
+      </li>
+    <br >
+    <hr >
     <% } %>
   </ul>
 </div>
