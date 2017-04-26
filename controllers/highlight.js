@@ -55,7 +55,7 @@ function highlightDelete(req, res) {
     });
   })
   .then(() => {
-    res.redirect('/highlight');
+    res.redirect('/highlights');
   })
   .catch(err => {
     res.status(500).render('error', { error: err });
