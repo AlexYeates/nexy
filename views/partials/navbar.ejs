@@ -1,25 +1,22 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-  <a class="navbar-brand" href="/">Nexy</a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
+<div class="sidebar">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <% if(locals.isLoggedIn) { %>
+      <li>
+        <a href="/highlights">My Highlights</a>
       </li>
-      <% if(locals.isLoggedIn) { %>
-      <li class="nav-item">
-        <a class="nav-link" href="/highlights">My Highlights</a>
+      <li>
+        <a href="/logout">Logout</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout</a>
-      </li>
-      <% } else { %>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Sign In</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/register">Sign Up</a>
-      </li>
-      <% } %>
-    </ul>
-  </div>
-</nav>
+    <% } else { %>
+        <li>
+          <a href="/login">Sign In</a>
+        </li>
+        <li>
+          <a href="/register">Sign Up</a>
+        </li>
+    <% } %>
+  </ul>
+</div>
