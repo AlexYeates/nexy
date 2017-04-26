@@ -8,7 +8,7 @@ function init() {
       title: $(this).parent().find('h2').text(),
       description: $(this).parent().find('p').text(),
       url: $(this).parent().find('a').attr('href'),
-      image: $(this).parent().find('img').attr('src')
+      image: $(this).parent().parent().find('img').attr('src')
     };
     $.post('http://localhost:8000/highlights', data)
     .done(data => {
@@ -31,10 +31,12 @@ function newsApi(source) {
     articleArray.forEach(function(element) {
       $(`<div class="grid-item">
       <img src="${element.urlToImage}">
-      <button class="highlight btn btn-primary">Highlight</button>
-      <h2>${element.title}</h2>
-      <p>${element.description}</p>
-      <p><a href="${element.url}">Read more...</a></p>
+      <div class="hover">
+        <h2>${element.title}</h2>
+        <p>${element.description}</p>
+        <button class="highlight btn btn-primary">Highlight</button>
+        <p><a href="${element.url}">Read more...</a></p>
+      </div>
       </div>`)
       .appendTo('#news');
     });

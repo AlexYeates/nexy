@@ -3,14 +3,52 @@
   float: right;
 }
 
+.sessions {
+  width: 80%;
+  float: right;
+  margin-top: 150px;
+}
+
 .grid-item {
   float: left;
   width: 33%;
-  height: 400px;
+  height: 250px;
+  overflow: hidden;
   border: 1px solid black;
+  position: relative;
+  opacity: 1;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
+
   img {
-    height: 50%;
+    height: 100%;
     width: 100%;
+  }
+
+  .hover {
+    opacity: 0;
+  }
+
+  &:hover {
+    .hover {
+      text-align: center;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      /* ...and now for the proper property */
+      transition:.5s;
+    }
   }
 }
 
@@ -21,9 +59,33 @@
   height: 610px;
 }
 
+h1 {
+  text-align: center;
+}
+
 li {
   font-family: Merriweather,serif;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   margin-top: 50px;
 }
+
+// .hover {
+//     position: absolute;
+//     top: 0;
+//     color: black;
+//     background-color:rgba(255,255,255,0.8);
+//     float: left;
+//     width: 33%;
+//     height: 500px;
+//     overflow: hidden;
+//     line-height:100px;
+//     text-align: center;
+//     z-index: 10;
+//     opacity: 0;
+//     transition: all 0.5s ease;
+//     display: inline-block;
+// }
+// .hover:hover {
+//     opacity:1;
+// }
