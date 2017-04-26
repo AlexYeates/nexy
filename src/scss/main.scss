@@ -15,9 +15,15 @@
 }
 
 .sidebar {
-  background-color: grey;
   width: 20%;
   float: left;
   margin-top: 80px;
   height: 610px;
+}
+
+li {
+  font-family: Merriweather,serif;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 50px;
 }
