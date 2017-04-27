@@ -1,6 +1,6 @@
 $(init);
 
-const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news', 'cnn', 'the-economist', 'the-telegraph', 'reuters'];
+const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news', 'the-economist'];
 
 function init() {
   $('div').on('click', '.highlight', function() {
@@ -36,9 +36,9 @@ function newsApi(source) {
         <h2>${element.title}</h2>
         <hr >
         <p>${element.description}</p>
+        <hr >
         <button class="btn btn-outline-primary"><a href="${element.url}">Read more!</a></button>
         <button class="highlight btn btn-outline-primary">Highlight</button>
-        <hr >
       </div>
       </div>`)
       .appendTo('#news');
