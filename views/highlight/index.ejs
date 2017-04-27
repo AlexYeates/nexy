@@ -2,17 +2,23 @@
   <% user.highlights.forEach(highlight => { %>
     <div class="grid-item">
       <img src="<%= highlight.image %>">
-        <div class="hover">
-          <br >
-          <h2><%= highlight.title %></h2>
-          <hr >
-          <p><%= highlight.description %></p>
-          <hr >
-          <button class="btn btn-outline-primary"><a href="<%= highlight.url %>">Read more!</a></button>
-          <form action="/highlight/<%= highlight.id %>" method="post" class="delete">
-            <input type="image" src="/images/delete.png" name="_method" value="delete">
-          </form>
+      <div class="hover">
+        <br >
+        <h2><%= highlight.title %></h2>
+        <hr >
+        <p><%= highlight.description %></p>
+        <hr >
+        <div id="highlight-buttons">
+          <div id="read">
+            <a href="<%= highlight.url %>"><img src="/images/read.png"></a>
+          </div>
+          <div id="delete">
+            <form action="/highlight/<%= highlight.id %>" method="post" class="delete">
+              <input type="image" src="/images/delete.png" name="_method" value="delete">
+            </form>
+          </div>
         </div>
+      </div>
     </div>
   <% }) %>
 </div>

@@ -57,6 +57,23 @@
   height: 640px;
 }
 
+#highlight-buttons {
+  display: inline-block;
+  width: 50px;
+}
+
+#read {
+  float: left;
+}
+
+#delete {
+  margin-top: 2px;
+}
+
+
+
+
+
 h1 {
   text-align: center;
   font-size: 100px;
@@ -80,6 +97,10 @@ p {
   font-family: Arimo,sans-serif;
   font-size: 12px;
   margin: 15px;
+}
+
+a {
+  display: inline-block;
 }
 
 
