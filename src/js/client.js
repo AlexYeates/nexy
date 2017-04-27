@@ -1,6 +1,6 @@
 $(init);
 
-const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news', 'the-economist'];
+const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitbart-news', 'the-economist', 'metro', 'newsweek', 'recode', 'the-new-york-times', 'the-verge'];
 
 function init() {
   $('div').on('click', '.highlight', function() {
