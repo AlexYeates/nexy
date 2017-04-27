@@ -3,10 +3,13 @@
     <div class="grid-item">
       <img src="<%= highlight.image %>">
         <div class="hover">
+          <br >
           <h2><%= highlight.title %></h2>
+          <hr >
           <p><%= highlight.description %></p>
-          <p><a href="<%= highlight.url %>">Read more...</a></p>
-          <form action="/highlight/<%= highlight.id %>" method="post">
+          <hr >
+          <button class="btn btn-outline-primary"><a href="<%= highlight.url %>">Read more!</a></button>
+          <form action="/highlight/<%= highlight.id %>" method="post" class="delete">
             <input type="hidden" name="_method" value="delete">
             <button class="btn btn-danger delete">Delete</button>
           </form>

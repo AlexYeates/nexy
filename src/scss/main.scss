@@ -6,7 +6,7 @@
 .sessions {
   width: 75%;
   float: right;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .grid-item {
@@ -85,6 +85,10 @@ p {
 
 .highlight {
   font-family: 'Anton', sans-serif;
+}
+
+.delete {
+  display: inline-block;
 }
 
 .credit {

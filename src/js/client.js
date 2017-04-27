@@ -32,13 +32,13 @@ function newsApi(source) {
       $(`<div class="grid-item">
       <img src="${element.urlToImage}">
       <div class="hover">
-        <br >
-        <h2>${element.title}</h2>
-        <hr >
-        <p>${element.description}</p>
-        <hr >
-        <button class="btn btn-outline-primary"><a href="${element.url}">Read more!</a></button>
-        <button class="highlight btn btn-outline-primary">Highlight</button>
+      <br >
+      <h2>${element.title}</h2>
+      <hr >
+      <p>${element.description}</p>
+      <hr >
+      <button class="btn btn-outline-primary"><a href="${element.url}">Read more!</a></button>
+      <button class="highlight btn btn-outline-primary">Highlight</button>
       </div>
       </div>`)
       .appendTo('#news');
