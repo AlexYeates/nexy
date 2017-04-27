@@ -17,7 +17,7 @@ function secureRoute(req, res, next) {
 router.get('/', (req, res) => res.render('statics/home'));
 
 router.route('/highlights')
-  .get(highlightController.index)
+  .get(secureRoute, highlightController.index)
   .post(secureRoute, highlightController.create);
 router.route('/highlight/:id')
   .delete(secureRoute, highlightController.delete);
