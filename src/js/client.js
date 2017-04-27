@@ -4,7 +4,6 @@ const newsSources = ['bbc-news', 'the-guardian-uk', 'associated-press', 'breitba
 
 function init() {
   $('div').on('click', '.highlight', function() {
-    // if (locals.isLoggedIn) {
     const data = {
       title: $(this).parent().find('h2').text(),
       description: $(this).parent().find('p').text(),
@@ -18,9 +17,6 @@ function init() {
     .fail(data => {
       console.log(data);
     });
-    // } else {
-    // window.location.replace('/login');
-    // }
   });
   newsSources.forEach(function(source) {
     newsApi(source);
@@ -35,21 +31,15 @@ function newsApi(source) {
     articleArray.forEach(function(element) {
       $(`<div class="grid-item">
       <img src="${element.urlToImage}">
-      <div class="hover">
-      <br >
-      <h2>${element.title}</h2>
-      <hr >
-      <p>${element.description}</p>
-      <hr >
-
-      <div id="read">
-        <a href="${element.url}"><img src="/images/read.png"></a>
-      </div>
-
-
-
-      <button class="highlight btn btn-outline-primary">Highlight</button>
-      </div>
+        <div class="hover">
+          <br >
+          <h2>${element.title}</h2>
+          <hr >
+          <p>${element.description}</p>
+          <hr >
+          <button class="highlight btn btn-outline-primary">Highlight</button>
+          <button class="btn btn-outline-primary"><a href="${element.url}">Read</a></button>
+        </div>
       </div>`)
       .appendTo('#news');
     });

@@ -10,7 +10,7 @@
         <hr >
         <div id="highlight-buttons">
           <div id="read">
-            <a href="<%= highlight.url %>"><img src="/images/read.png"></a>
+            <button class="btn btn-outline-primary color-white"><a href="<%= highlight.url %>">Read</a></button>
           </div>
           <div id="delete">
             <form action="/highlight/<%= highlight.id %>" method="post" class="delete">

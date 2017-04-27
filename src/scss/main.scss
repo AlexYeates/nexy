@@ -59,7 +59,7 @@
 
 #highlight-buttons {
   display: inline-block;
-  width: 50px;
+  width: 120px;
 }
 
 #read {
@@ -67,12 +67,8 @@
 }
 
 #delete {
-  margin-top: 2px;
+  margin-top: 7px;
 }
-
-
-
-
 
 h1 {
   text-align: center;
@@ -101,12 +97,12 @@ p {
 
 a {
   display: inline-block;
+  &:hover {
+    color: white;
+  }
 }
 
 
-.highlight {
-  font-family: 'Anton', sans-serif;
-}
 
 .delete {
   display: inline-block;
