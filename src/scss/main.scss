@@ -32,6 +32,7 @@
 
   &:hover {
     .hover {
+      border: 0.5px double black;
       text-align: center;
       opacity: 1;
       position: absolute;
@@ -65,6 +66,7 @@ h1 {
 
 h2 {
   font-family: 'Anton', sans-serif;
+  font-size: 22px;
 }
 
 li {
@@ -74,15 +76,24 @@ li {
   margin-top: 50px;
 }
 
+p {
+  font-family: 'Anton', sans-serif;
+
+}
+
+a {
+  font-family: 'Anton', sans-serif;
+}
+
+.highlight {
+  font-family: 'Anton', sans-serif;
+}
+
 .credit {
   font-family: Anton,sans-serif;
   font-size: 12px;
   margin: auto;
   text-decoration: underline;
-}
-
-p {
-  font-family: 'Anton', sans-serif;
 }
 
 hr {
